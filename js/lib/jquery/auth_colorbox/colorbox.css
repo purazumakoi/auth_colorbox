@@ -1,0 +1,96 @@
+@charset "utf-8";
+/*
+    ColorBox Core Style
+    The following rules are the styles that are consistant between themes.
+    Avoid changing this area to maintain compatability with future versions of ColorBox.
+*/
+#cboxslideWrap {
+}
+
+#colorbox, #cboxOverlay, #cboxWrapper{position:absolute; top:0; left:0; z-index:1000; overflow:hidden;}
+
+#cboxOverlay{position:fixed; width:100%; height:100%;}
+#cboxMiddleLeft, #cboxBottomLeft{clear:left;}
+#cboxContent{position:relative;}
+#cboxLoadedContent iframe{display:block; width:100%; height:100%; border:0;}
+#cboxTitle{margin:0;}
+#cboxLoadingOverlay, #cboxLoadingGraphic{position:absolute; top:0; left:0; width:100%;}
+
+#cboxPrevious,
+#cboxNext,
+#cboxClose,
+#cboxSlideshow,
+#cboxList{
+	cursor:pointer;
+}
+
+#cboxTopLeft { height: 0; }
+#cboxTopCenter { height: 0; }
+#cboxTopRight { height: 0; }
+
+#cboxBottomLeft { height: 0; }
+#cboxBottomCenter { height: 0; }
+#cboxBottomRight { height: 0; }
+
+
+
+#cboxOverlay{
+	background: #000000;
+	z-index: 100;
+}
+#colorbox{
+}
+    #cboxContent{}
+       /* #cboxLoadedContent{background:#000; padding:5px;}*/
+				
+        #cboxTitle{width:800px;text-align:center;position:absolute; bottom:35px;left:0; color:#ccc;}
+        #cboxCurrent{width:900px;position:absolute;bottom:60px; text-align:center;left:0; color:#ccc;}
+        #cboxSlideshow{position:absolute; top:-20px; right:90px; color:#fff;}
+       	
+				#cboxBtn {
+					position: absolute; 
+				}
+					#cboxPrevious{
+						position:absolute; top:50%; left: 0; margin-top:0; background: url(../auth_colorbox/image/btn_color_left.gif) top left no-repeat; width:30px; height:30px; text-indent:-9999px;
+						filter: alpha(opacity=95);
+						-moz-opacity:0.95;
+						opacity:0.95;
+						z-index: 5000;
+						display: none;
+					}
+					
+					#cboxNext{
+						position:absolute; top:50%; right: 0; margin-top:0; background:url(../auth_colorbox/image/btn_color_right.gif) top right no-repeat; width:30px; height:30px; text-indent:-9999px;
+						filter: alpha(opacity=95);
+						-moz-opacity:0.95;
+						opacity:0.95;
+						z-index: 5000;
+						display: none;
+					}
+					#cboxClose{
+						position:absolute; top:10px; right: 0; display:block; background:url(../auth_colorbox/image/btn_color_close.gif) top center no-repeat; width:95px; height:30px; text-indent:-9999px; color: #ffffff;
+						filter: alpha(opacity=95);
+						-moz-opacity:0.95;
+						opacity:0.95;
+						z-index: 5000;
+						display: none;
+					}
+					#cboxList{
+						position:absolute; bottom:0; right: 0; background:url(../auth_colorbox/image/btn_color_list.gif) top center no-repeat; width:90px; height:40px; text-indent:-9999px; color: #ffffff;
+						filter: alpha(opacity=95);
+						-moz-opacity:0.95;
+						opacity:0.95;
+						z-index: 5000;
+						display: none;
+					}
+        #cboxLoadingGraphic{ background: url(../image/auth_colorbox/loading.gif) center center no-repeat;}
+
+/*----------------------------------------------*/
+/*                                              */
+/* edit                                         */
+/*                                              */
+/*----------------------------------------------*/
+
+#cboxLoadedContent {
+	background-color: #ffffff;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>jquery簡易認証colorbox</title>
+</head>
+<body>
+<div>
+<h1>このプラグインの機能</h1>
+このプラグインは簡易認証サイトを作るためのものです。
+</div>
+<div>
+<h1>編集用ファイルの役割</h1>
+auth_pass.dat・・・認証用パスワード<br>
+auth.html・・・認証用light box（colorbox）のなか見
+
+</div>
+<h1>技術的に</h1>
+colorboxをベースにカスタマイズしてあります。<br>
+DBはCookieなので、Cookieを消すと再認証を求められます。
+
+</div>
+
+
+
+<a href="./auth.html" id="authObj"></a>	
+	
+	
+<script type="text/javascript" src="js/lib/jquery-1.8.3.min.js"></script>
+<script src="js/lib/jquery/jquery.cookie.js"></script>
+<script src="js/lib/jquery/auth_colorbox/jquery.colorbox.js"></script>
+<link rel="stylesheet" href="js/lib/jquery/auth_colorbox/colorbox.css">
+
+<script type="text/javascript">
+$(function(){
+	$("#authObj").colorbox({width:"600px", height:"400px", iframe:false});
+});
+
+</script>
+	
+</body>
+</html>
+	
+
+
