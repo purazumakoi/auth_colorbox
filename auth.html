@@ -4,10 +4,18 @@
 	<p>パスワードを入力後「パスワード認証」ボタンをクリックしてください</p>
 
 	<p id="pMessage"></p>
-	<form>
+	<form onSubmit="return fSubmit();">
 		<span><input id="iPassWord" type="text" value=""></span><a id="aPassWord" href="javascript:void(0)">パスワード認証</a>
 	</form>
 
 	<p>パスワード：1111</p>
+
+	<script type="text/javascript">
+	function fSubmit(){
+		$('#aPassWord').trigger("click");
+		return false;
+	}
+	</script>
+
 
 </div>
