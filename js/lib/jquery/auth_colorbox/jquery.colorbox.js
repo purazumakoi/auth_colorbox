@@ -4,7 +4,7 @@
 (function ($, document, window) {
 	var
 	// ColorBox Default Settings.	
-	// See http://colorpowered.com/colorbox for details.
+	// See http://colorpowered.com/authcolorbox for details.
 	defaults = {
 		transition: "elastic",
 		speed: 300,
@@ -53,7 +53,7 @@
 	},
 	
 	// Abstracting the HTML and event identifiers for easy rebranding
-	colorbox = 'colorbox',
+	authcolorbox = 'authcolorbox',
 	prefix = 'cbox',
 	
 	// Events	
@@ -202,7 +202,7 @@
 			
 			element = elem;
 			
-			process($.extend(settings, $.data(element, colorbox)));
+			process($.extend(settings, $.data(element, authcolorbox)));
 			
 			$related = $(element);
 			
@@ -210,7 +210,7 @@
 			
 			if (settings.rel !== 'nofollow') {
 				$related = $('.' + boxElement).filter(function () {
-					var relRelated = $.data(this, colorbox).rel || this.rel;
+					var relRelated = $.data(this, authcolorbox).rel || this.rel;
 					return (relRelated === settings.rel);
 				});
 				index = $related.index(element);
@@ -275,11 +275,11 @@
 
 	// ****************
 	// PUBLIC FUNCTIONS
-	// Usage format: $.fn.colorbox.close();
-	// Usage from within an iframe: parent.$.fn.colorbox.close();
+	// Usage format: $.fn.authcolorbox.close();
+	// Usage from within an iframe: parent.$.fn.authcolorbox.close();
 	// ****************
 	
-	publicMethod = $.fn[colorbox] = $[colorbox] = function (options, callback) {
+	publicMethod = $.fn[authcolorbox] = $[authcolorbox] = function (options, callback) {
 		var $this = this, autoOpen;
 		
 		if (!$this[0] && $this.selector) { // if a selector was given and it didn't match any elements, go ahead and exit.
@@ -292,7 +292,7 @@
 			options.onComplete = callback;
 		}
 		
-		if (!$this[0] || $this.selector === undefined) { // detects $.colorbox() and $.fn.colorbox()
+		if (!$this[0] || $this.selector === undefined) { // detects $.authcolorbox() and $.fn.authcolorbox()
 			$this = $('<a/>');
 			options.open = true; // assume an immediate open
 		}
@@ -302,7 +302,7 @@
 		// -
 		
 		$this.each(function (i) {
-			$.data(this, colorbox, $.extend({}, $.data(this, colorbox) || defaults, options));
+			$.data(this, authcolorbox, $.extend({}, $.data(this, authcolorbox) || defaults, options));
 			$(this).addClass(boxElement);
 			
 			// pass_auth  edit -----------------
@@ -334,12 +334,12 @@
 	};
 
 	// Initialize ColorBox: store common calculations, preload the interface graphics, append the html.
-	// This preps colorbox for a speedy open when clicked, and lightens the burdon on the browser by only
-	// having to run once, instead of each time colorbox is opened.
+	// This preps authcolorbox for a speedy open when clicked, and lightens the burdon on the browser by only
+	// having to run once, instead of each time authcolorbox is opened.
 	publicMethod.init = function () {
 		// Create & Append jQuery Objects
 		$window = $(window);
-		$box = $div().attr({id: colorbox, 'class': isIE ? prefix + (isIE6 ? 'IE6' : 'IE') : ''});
+		$box = $div().attr({id: authcolorbox, 'class': isIE ? prefix + (isIE6 ? 'IE6' : 'IE') : ''});
 		$overlay = $div("Overlay", isIE6 ? 'position:absolute' : '').hide();
 		
 		$wrap = $div("Wrapper");
@@ -446,7 +446,7 @@
 	
 	publicMethod.remove = function () {
 		$box.add($overlay).remove();
-		$('.' + boxElement).die('click').removeData(colorbox).removeClass(boxElement);
+		$('.' + boxElement).die('click').removeData(authcolorbox).removeClass(boxElement);
 	};
 
 	publicMethod.position = function (speed, loadedCallback) {
@@ -460,7 +460,7 @@
 		animate_speed = ($box.width() === settings.w + loadedWidth && $box.height() === settings.h + loadedHeight) ? 0 : speed;
 		
 		// this gives the wrapper plenty of breathing room so it's floated contents can move around smoothly,
-		// but it has to be shrank down around the size of div#colorbox when it's done.  If not,
+		// but it has to be shrank down around the size of div#authcolorbox when it's done.  If not,
 		// it can invoke an obscure IE bug when using iframes.
 		$wrap[0].style.width = $wrap[0].style.height = "9999px";
 		
@@ -478,7 +478,7 @@
 				
 				active = false;
 				
-				// shrink the wrapper down to exactly the size of colorbox to avoid a bug in IE's iframe implementation.
+				// shrink the wrapper down to exactly the size of authcolorbox to avoid a bug in IE's iframe implementation.
 				$wrap[0].style.width = (settings.w + loadedWidth + interfaceWidth) + "px";
 				$wrap[0].style.height = (settings.h + loadedHeight + interfaceHeight) + "px";
 				
@@ -628,8 +628,8 @@
 					
 					// Preloads images within a rel group
 					if (settings.preloading) {
-						nextSrc = $.data(next, colorbox).href || next.href;
-						prevSrc = $.data(prev, colorbox).href || prev.href;
+						nextSrc = $.data(next, authcolorbox).href || next.href;
+						prevSrc = $.data(prev, authcolorbox).href || prev.href;
 						
 						nextSrc = $.isFunction(nextSrc) ? nextSrc.call(next) : nextSrc;
 						prevSrc = $.isFunction(prevSrc) ? prevSrc.call(prev) : prevSrc;
@@ -706,7 +706,7 @@
 		element = $related[index];
 		
 		if (!launched) {
-			process($.extend(settings, $.data(element, colorbox)));
+			process($.extend(settings, $.data(element, authcolorbox)));
 		}
 		
 		trigger(event_purge);
@@ -825,7 +825,7 @@
 		}
 	};
 
-	// Note: to use this within an iframe use the following format: parent.$.fn.colorbox.close();
+	// Note: to use this within an iframe use the following format: parent.$.fn.authcolorbox.close();
 	publicMethod.close = function () {
 		if (open && !closing) {
 			
@@ -879,7 +879,7 @@
 
 
 		// パスワード、現在のファイル名取得
-		var pass = fGetTextFile("./auth_pass.dat");
+		var pass = fGetTextFile("/auth_pass.dat");
 		var file = fGetFileName(location.href);
 	
 
@@ -930,7 +930,7 @@
 		
 	$("#aPassWord").live("click", function(){
 			
-		var pass = fGetTextFile("./auth_pass.dat");
+		var pass = fGetTextFile("/auth_pass.dat");
 		var file = $.cookie("pass_look");
 		var val = $("#iPassWord").val();
 			

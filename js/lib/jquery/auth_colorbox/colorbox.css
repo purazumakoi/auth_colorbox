@@ -7,7 +7,7 @@
 #cboxslideWrap {
 }
 
-#colorbox, #cboxOverlay, #cboxWrapper{position:absolute; top:0; left:0; z-index:1000; overflow:hidden;}
+#authcolorbox, #cboxOverlay, #cboxWrapper{position:absolute; top:0; left:0; z-index:1000; overflow:hidden;}
 
 #cboxOverlay{position:fixed; width:100%; height:100%;}
 #cboxMiddleLeft, #cboxBottomLeft{clear:left;}
@@ -38,7 +38,7 @@
 	background: #000000;
 	z-index: 100;
 }
-#colorbox{
+#authcolorbox{
 }
     #cboxContent{}
        /* #cboxLoadedContent{background:#000; padding:5px;}*/
@@ -51,7 +51,7 @@
 					position: absolute; 
 				}
 					#cboxPrevious{
-						position:absolute; top:50%; left: 0; margin-top:0; background: url(../auth_colorbox/image/btn_color_left.gif) top left no-repeat; width:30px; height:30px; text-indent:-9999px;
+						position:absolute; top:50%; left: 0; margin-top:0; background: url(../auth_authcolorbox/image/btn_color_left.gif) top left no-repeat; width:30px; height:30px; text-indent:-9999px;
 						filter: alpha(opacity=95);
 						-moz-opacity:0.95;
 						opacity:0.95;
@@ -60,7 +60,7 @@
 					}
 					
 					#cboxNext{
-						position:absolute; top:50%; right: 0; margin-top:0; background:url(../auth_colorbox/image/btn_color_right.gif) top right no-repeat; width:30px; height:30px; text-indent:-9999px;
+						position:absolute; top:50%; right: 0; margin-top:0; background:url(../auth_authcolorbox/image/btn_color_right.gif) top right no-repeat; width:30px; height:30px; text-indent:-9999px;
 						filter: alpha(opacity=95);
 						-moz-opacity:0.95;
 						opacity:0.95;
@@ -68,7 +68,7 @@
 						display: none;
 					}
 					#cboxClose{
-						position:absolute; top:10px; right: 0; display:block; background:url(../auth_colorbox/image/btn_color_close.gif) top center no-repeat; width:95px; height:30px; text-indent:-9999px; color: #ffffff;
+						position:absolute; top:10px; right: 0; display:block; background:url(../auth_authcolorbox/image/btn_color_close.gif) top center no-repeat; width:95px; height:30px; text-indent:-9999px; color: #ffffff;
 						filter: alpha(opacity=95);
 						-moz-opacity:0.95;
 						opacity:0.95;
@@ -76,14 +76,14 @@
 						display: none;
 					}
 					#cboxList{
-						position:absolute; bottom:0; right: 0; background:url(../auth_colorbox/image/btn_color_list.gif) top center no-repeat; width:90px; height:40px; text-indent:-9999px; color: #ffffff;
+						position:absolute; bottom:0; right: 0; background:url(../auth_authcolorbox/image/btn_color_list.gif) top center no-repeat; width:90px; height:40px; text-indent:-9999px; color: #ffffff;
 						filter: alpha(opacity=95);
 						-moz-opacity:0.95;
 						opacity:0.95;
 						z-index: 5000;
 						display: none;
 					}
-        #cboxLoadingGraphic{ background: url(../image/auth_colorbox/loading.gif) center center no-repeat;}
+        #cboxLoadingGraphic{ background: url(../image/auth_authcolorbox/loading.gif) center center no-repeat;}
 
 /*----------------------------------------------*/
 /*                                              */
